@@ -1,6 +1,6 @@
 FROM python:3.8-alpine
 
-RUN apt install git
+RUN apk add git
 
 RUN pip install garmin-uploader paho-mqtt
 
