@@ -2,6 +2,8 @@
 
 Docker container to upload data from Xiaomi mi smart scale to https://connect.garmin.com
 
+Tested on Python 3.5 & Python 3.8
+
 ## Build image:
 
 ```
@@ -22,6 +24,13 @@ docker run --name=xmtg \
   --restart always \
   mirecekd/xmtg
 ```
+
+## Configure Xiaomi Mi Scale
+Follow instructions on lolouk44's [page](https://github.com/lolouk44/xiaomi_mi_scale)
+
+## Configure Garmin Connect account
+Follow instructions on Bastien's [page](https://github.com/La0/garmin-uploader#garmin-connect-account)
+
 
 # Credits
 
