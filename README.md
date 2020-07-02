@@ -1,4 +1,4 @@
-# xmtg (Xiaomi MQTT to GarminConnect)
+# xmtg (Xiaomi Mqtt To Garmin connect)
 
 Using lolouk44/xiaomi_mi_scale, jaroslawhartman/withings-garmin-v2 and La0/garmin-uploader to automatically upload data from xiaomi smart scales via MQTT to https://connect.garmin.com
 
@@ -22,3 +22,16 @@ docker run --name=xmtg \
   --restart always \
   mirecekd/xmtg
 ```
+
+# Credits
+
+## lolouk44 
+for Code to read weight measurements from Xiaomi Body Scales - https://github.com/lolouk44/xiaomi_mi_scale
+
+## Jarek Hartman & Masayuki Hamasaki
+for library which I am using to create Garmin ANT+ FIT files - https://github.com/jaroslawhartman/withings-garmin-v2
+
+## Bastien Abadie
+for library for upload files to https://connect.garmin.com - https://github.com/La0/garmin-uploader
+
+Miroslav Dvorak
