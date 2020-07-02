@@ -6,11 +6,17 @@ Tested on Python 3.5 & Python 3.8
 
 ## Build image:
 
+clone this repo and build container
 ```
+git clone https://github.com/mirecekd/xmtg
+cd xmtg
 docker build -t mirecekd/xmtg .
 ```
 
-## Run image:
+## Run container:
+(use your values)
+
+
 ```
 docker run --name=xmtg \
   -e "MQTT_BROKER=127.0.0.1" \
@@ -28,9 +34,8 @@ docker run --name=xmtg \
 ## Configure Xiaomi Mi Scale
 Follow instructions on lolouk44's [page](https://github.com/lolouk44/xiaomi_mi_scale)
 
-## Configure Garmin Connect account
+## Configure Garmin Connect
 Follow instructions on Bastien's [page](https://github.com/La0/garmin-uploader#garmin-connect-account)
-
 
 # Credits
 
@@ -42,5 +47,3 @@ for library which I am using to create Garmin ANT+ FIT files - https://github.co
 
 ## Bastien Abadie
 for library for upload files to https://connect.garmin.com - https://github.com/La0/garmin-uploader
-
-Miroslav Dvorak
