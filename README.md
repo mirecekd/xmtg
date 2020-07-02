@@ -1,6 +1,6 @@
-# xmtg (Xiaomi Mqtt To Garmin connect)
+# xmtg (Xiaomi smart scale Mqtt To Garmin connect)
 
-Docker container to upload data from Xiaomi mi smart scale to https://connect.garmin.com
+Docker container to upload data from Xiaomi Mi Smart Scale (and other bluetooth capable smart scales) to https://connect.garmin.com. 
 
 Tested on Python 3.5 & Python 3.8
 
