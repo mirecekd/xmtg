@@ -68,7 +68,7 @@ def on_message(client, userdata, msg):
   os.remove(filename)
   print("File %s deleted. Waiting for next MQTT msg" % filename)
 
-client = mqtt.Client("xiaomi_mqtt_to_garmin")
+client = mqtt.Client(username)
 client.username_pw_set(username,password)
 client.connect(broker,port,timelive)
 client.on_connect = on_connect
