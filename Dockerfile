@@ -2,7 +2,7 @@ FROM python:3.8-alpine
 
 RUN apk add git
 
-RUN pip install garmin-uploader paho-mqtt
+RUN pip install garmin-uploader@cloudscraper paho-mqtt
 
 WORKDIR /opt
 
