@@ -1,8 +1,10 @@
-FROM python:3.8-alpine
+FROM python:3.9-alpine
 
 RUN apk add git
 
-RUN pip install garmin-uploader@cloudscraper paho-mqtt
+RUN pip install paho-mqtt
+
+RUN pip install https://github.com/La0/garmin-uploader/archive/cloudscraper.zip
 
 WORKDIR /opt
 
