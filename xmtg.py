@@ -72,18 +72,14 @@ def on_message(client, userdata, msg):
   finished = False
   while not finished:
     p=subprocess.run(["/usr/local/bin/gupload", filename, "-u", garmin_user, "-p", garmin_pass, "-v", "1"],capture_output=True)
-    if p.stdout.find(b'[INFO] Uploaded activity') > 0:
+    if p.stderr.find(b'Uploaded activity wscale') > 0:
       finished = True
       print ("=-=-=-=-=-=-= SUCCESS =-=-=-=-=-=-=")
-      print (p.stdout)
       print (p.stderr)
       print ("=-=-=-=-=-=-= SUCCESS =-=-=-=-=-=-=")
     else:
-      print ("-- FAIL --")
-      print (p.args)
-      print (p.stdout) 
+      print ("FAIL REASON: ", p.stdout)
       print (p.stderr)
-      print ("-- FAIL --")
       time.sleep(30)
 
 client = mqtt.Client(username)
