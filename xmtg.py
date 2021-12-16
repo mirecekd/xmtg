@@ -81,7 +81,7 @@ def on_message(client, userdata, msg):
       print ("-- FAIL --")
       print (p.stdout) 
       print ("-- FAIL --")
-      time.wait(30)
+      time.sleep(30)
 
 client = mqtt.Client(username)
 client.username_pw_set(username,password)
