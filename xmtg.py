@@ -80,7 +80,12 @@ def on_message(client, userdata, msg):
     else:
       print ("FAIL REASON: ", p.stdout)
       print (p.stderr)
-      time.sleep(130)
+      if p.stderr.find(b'Authentication failed due to too many requests') > 0:
+        print ("Web page puts ban on me - waiting  1h")
+        timeout=3600
+      else:
+        timeout=120
+      time.sleep(timeout)
 
 client = mqtt.Client(username)
 client.username_pw_set(username,password)
