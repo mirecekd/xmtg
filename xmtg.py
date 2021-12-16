@@ -71,7 +71,7 @@ def on_message(client, userdata, msg):
 
   finished = False
   while not finished:
-    p=subprocess.run(["/usr/local/bin/gupload", filename, "-u", garmin_user, "-p", garmin_pass, "-v", "1"],capture_output=Ture)
+    p=subprocess.run(["/usr/local/bin/gupload", filename, "-u", garmin_user, "-p", garmin_pass, "-v", "1"],capture_output=True)
     if p.stdout.find(b'[INFO] Uploaded activity') > 0:
       finished = True
       print ("=-=-=-=-=-=-= SUCCESS =-=-=-=-=-=-=")
