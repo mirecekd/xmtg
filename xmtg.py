@@ -4,6 +4,7 @@ import paho.mqtt.client as mqtt
 import json
 import os
 import subprocess
+import time
 
 from fit import FitEncoder_Weight
 from datetime import datetime
@@ -62,11 +63,25 @@ def on_message(client, userdata, msg):
   print("File %s written" % filename)
   a.close()
 
-  p=subprocess.Popen(["/usr/local/bin/gupload", filename, "-u", garmin_user, "-p", garmin_pass, "-v", "1"])
-  p.wait()
+#  p=subprocess.Popen(["/usr/local/bin/gupload", filename, "-u", garmin_user, "-p", garmin_pass, "-v", "1"])
+#  p.wait()
 
-  os.remove(filename)
-  print("File %s deleted. Waiting for next MQTT msg" % filename)
+#  os.remove(filename)
+#  print("File %s deleted. Waiting for next MQTT msg" % filename)
+
+  finished = False
+  while not finished:
+    p=subprocess.run(["/usr/local/bin/gupload", filename, "-u", garmin_user, "-p", garmin_pass, "-v", "1"],capture_output=Ture)
+    if p.stdout.find(b'[INFO] Uploaded activity') > 0:
+      finished = True
+      print ("=-=-=-=-=-=-= SUCCESS =-=-=-=-=-=-=")
+      print (p.stdout)
+      print ("=-=-=-=-=-=-= SUCCESS =-=-=-=-=-=-=")
+    else:
+      print ("-- FAIL --")
+      print (p.stdout) 
+      print ("-- FAIL --")
+      time.wait(30)
 
 client = mqtt.Client(username)
 client.username_pw_set(username,password)
