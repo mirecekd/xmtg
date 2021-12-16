@@ -76,10 +76,13 @@ def on_message(client, userdata, msg):
       finished = True
       print ("=-=-=-=-=-=-= SUCCESS =-=-=-=-=-=-=")
       print (p.stdout)
+      print (p.stderr)
       print ("=-=-=-=-=-=-= SUCCESS =-=-=-=-=-=-=")
     else:
       print ("-- FAIL --")
+      print (p.args)
       print (p.stdout) 
+      print (p.stderr)
       print ("-- FAIL --")
       time.sleep(30)
 
