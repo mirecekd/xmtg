@@ -43,7 +43,9 @@ Follow instructions on Bastien's [page](https://github.com/La0/garmin-uploader#g
 for Code to read weight measurements from Xiaomi Body Scales - https://github.com/lolouk44/xiaomi_mi_scale
 
 ## Jarek Hartman & Masayuki Hamasaki
-for library which I am using to create Garmin ANT+ FIT files - https://github.com/jaroslawhartman/withings-garmin-v2
+for library which I am using to create Garmin ANT+ FIT files - https://github.com/jaroslawhartman/withings-garmin-v2, in v2 version I am using https://github.com/jaroslawhartman/withings-sync.git
+
+Parts of Jarek's work is based on 
 
 ## Bastien Abadie
 for library for upload files to https://connect.garmin.com - https://github.com/La0/garmin-uploader
