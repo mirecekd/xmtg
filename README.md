@@ -2,7 +2,7 @@
 
 Docker container to upload data from Xiaomi Mi Smart Scale (and other bluetooth capable smart scales) to https://connect.garmin.com. 
 
-Tested on Python 3.5 & Python 3.8
+Tested on Python 3.11 
 
 ## Build image:
 
@@ -30,6 +30,14 @@ docker run --name=xmtg \
   --restart always \
   mirecekd/xmtg
 ```
+# v3
+## Workflow
+
+1. ESPHome reads data from Xiaomi Mi Scale and pushes data to MQTT topic
+1. xmtg reads topic and pushes data to Garmin Connect
+
+
+# obsolete: v2
 
 ## Configure Xiaomi Mi Scale
 Follow instructions on lolouk44's [page](https://github.com/lolouk44/xiaomi_mi_scale)
