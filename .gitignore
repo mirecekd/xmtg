@@ -1,0 +1,5 @@
+env.sh
+memory-bank/
+start/
+__pycache__/
+*.pyc
